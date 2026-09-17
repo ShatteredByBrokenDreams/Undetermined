@@ -566,6 +566,30 @@ sources/0 = SubResource("TileSetAtlasSource_0aq6d")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=552021974]
 
-[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=135597659]
+[node name="World" type="Node" parent="." unique_id=600297741]
+
+[node name="Floors" type="Node" parent="World" unique_id=937455980]
+
+[node name="Z0" type="Node" parent="World/Floors" unique_id=949928898]
+
+[node name="Ground" type="TileMapLayer" parent="World/Floors/Z0" unique_id=135597659]
+y_sort_enabled = true
 tile_map_data = PackedByteArray("AAAAAAEAAAAAAAAAAAD//wAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAABAAEAAAAAAAAAAAABAAIAAAAAAAAAAAAAAAIAAAAAAAAAAAD//wEAAAAAAAAAAAD//wIAAAAAAAAAAAD+/wMAAAAAAAIAAAD+/wIAAAAAAAIAAAD+/wEAAAAAAAIAAAD+/wAAAAAAAAIAAAD+////AAAAAAIAAAD/////AAAAAAIAAAAAAP//AAAAAAIAAAABAP//AAAAAAIAAAACAAAAAAAAAAIAAAACAP//AAAAAAIAAAACAAEAAAAAAAIAAAACAAIAAAAAAAIAAAACAAMAAAAAAAIAAAABAAMAAAAAAAIAAAAAAAMAAAAAAAIAAAD//wMAAAAAAAIAAAACAAQAAAAAAAEAAAD9/wMAAAAAAAEAAAD9////AAAAAAEAAAD+//7/AAAAAAEAAAACAP7/AAAAAAEAAAADAP//AAAAAAEAAAADAAMAAAAAAAEAAAD+/wQAAAAAAAEAAAA=")
 tile_set = SubResource("TileSet_e6w0b")
+
+[node name="Overlays" type="TileMapLayer" parent="World/Floors/Z0" unique_id=1588110781]
+z_index = 1
+z_as_relative = false
+tile_set = SubResource("TileSet_e6w0b")
+
+[node name="Entities" type="Node2D" parent="World/Floors/Z0" unique_id=1518829401]
+
+[node name="Player" type="Node2D" parent="World/Floors/Z0/Entities" unique_id=1595339343]
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Floors/Z0/Entities/Player" unique_id=277850155]
+
+[node name="StateMachine" type="Node" parent="World/Floors/Z0/Entities/Player" unique_id=931433049]
+
+[node name="Idle" type="Node" parent="World/Floors/Z0/Entities/Player/StateMachine" unique_id=1736000520]
+
+[node name="Acting" type="Node" parent="World/Floors/Z0/Entities/Player/StateMachine" unique_id=275507848]
