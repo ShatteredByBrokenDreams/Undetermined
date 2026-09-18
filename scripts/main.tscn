@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://01bs4jrjiod1" path="res://scripts/z_floor_script.gd" id="1_irwmq"]
 [ext_resource type="Texture2D" uid="uid://bej3l0wpru16" path="res://art/spritesheet/spritesheet.png" id="1_q753v"]
+[ext_resource type="Script" uid="uid://dj0o47jpa86dx" path="res://scripts/player_template.gd" id="3_0nr8p"]
 [ext_resource type="Texture2D" uid="uid://djpn5j2lvaadq" path="res://art/spritesheet/PlayerPlaceholder.png" id="3_hakmx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0aq6d"]
@@ -593,6 +594,7 @@ tile_set = SubResource("TileSet_e6w0b")
 [node name="Entities" type="Node2D" parent="World/Floors/Z0" unique_id=1518829401]
 
 [node name="Player" type="Node2D" parent="World/Floors/Z0/Entities" unique_id=1595339343]
+script = ExtResource("3_0nr8p")
 
 [node name="Sprite2D" type="Sprite2D" parent="World/Floors/Z0/Entities/Player" unique_id=277850155]
 texture = SubResource("AtlasTexture_uirl0")
