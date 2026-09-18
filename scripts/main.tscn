@@ -1,6 +1,8 @@
 [gd_scene format=4 uid="uid://dtlgn8s5foonv"]
 
+[ext_resource type="Script" uid="uid://01bs4jrjiod1" path="res://scripts/z_floor_script.gd" id="1_irwmq"]
 [ext_resource type="Texture2D" uid="uid://bej3l0wpru16" path="res://art/spritesheet/spritesheet.png" id="1_q753v"]
+[ext_resource type="Texture2D" uid="uid://djpn5j2lvaadq" path="res://art/spritesheet/PlayerPlaceholder.png" id="3_hakmx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0aq6d"]
 texture = ExtResource("1_q753v")
@@ -562,6 +564,10 @@ tile_layout = 5
 tile_size = Vector2i(32, 16)
 sources/0 = SubResource("TileSetAtlasSource_0aq6d")
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_uirl0"]
+atlas = ExtResource("3_hakmx")
+region = Rect2(0, 0, 512, 64)
+
 [node name="Main" type="Node2D" unique_id=715220420]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=552021974]
@@ -570,7 +576,9 @@ sources/0 = SubResource("TileSetAtlasSource_0aq6d")
 
 [node name="Floors" type="Node" parent="World" unique_id=937455980]
 
-[node name="Z0" type="Node" parent="World/Floors" unique_id=949928898]
+[node name="Z0" type="Node" parent="World/Floors" unique_id=949928898 node_paths=PackedStringArray("gg")]
+script = ExtResource("1_irwmq")
+gg = NodePath("Ground")
 
 [node name="Ground" type="TileMapLayer" parent="World/Floors/Z0" unique_id=135597659]
 y_sort_enabled = true
@@ -587,6 +595,10 @@ tile_set = SubResource("TileSet_e6w0b")
 [node name="Player" type="Node2D" parent="World/Floors/Z0/Entities" unique_id=1595339343]
 
 [node name="Sprite2D" type="Sprite2D" parent="World/Floors/Z0/Entities/Player" unique_id=277850155]
+texture = SubResource("AtlasTexture_uirl0")
+offset = Vector2(0, -16)
+hframes = 8
+frame = 7
 
 [node name="StateMachine" type="Node" parent="World/Floors/Z0/Entities/Player" unique_id=931433049]
 
