@@ -255,9 +255,3 @@ sources/0 = SubResource("TileSetAtlasSource_u0x2w")
 [node name="Z0" type="TileMapLayer" parent="." unique_id=655913329]
 tile_map_data = PackedByteArray("AAAAAAEAAAAAAAAAAAABAAEAAAAAAAAAAAABAAIAAAAAAAAAAAAAAAIAAAAAAAAAAAD//wIAAAAAAAAAAAD//wEAAAAAAAAAAAD//wAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAA=")
 tile_set = SubResource("TileSet_i81jm")
-
-[node name="Player" type="Node" parent="Z0" unique_id=2029236225]
-
-[node name="Body" type="Sprite2D" parent="Z0/Player" unique_id=916872915]
-
-[node name="Enemies" type="Node" parent="Z0" unique_id=1683203402]
